@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quantum | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#05070d;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* Background */
+
+#particles{
+    position:fixed;
+    width:100%;
+    height:100%;
+    z-index:-1;
+}
+
+/* Navbar */
+
+nav{
+    position:fixed;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 10%;
+    background:rgba(0,0,0,.3);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid rgba(0,255,255,.15);
+}
+
+.logo{
+    color:#00eaff;
+    font-size:28px;
+    font-weight:bold;
+    letter-spacing:3px;
+}
+
+nav ul{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#00eaff;
+}
+
+/* Hero */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:70px;
+    color:#00eaff;
+    text-shadow:0 0 25px #00eaff;
+}
+
+.hero h2{
+    margin-top:15px;
+    color:#bbb;
+    font-weight:300;
+}
+
+.hero button{
+    margin-top:35px;
+    padding:15px 40px;
+    border:none;
+    border-radius:50px;
+    background:#00eaff;
+    color:black;
+    cursor:pointer;
+    font-size:17px;
+    transition:.3s;
+}
+
+.hero button:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 25px #00eaff;
+}
+
+/* Sections */
+
+section{
+    width:80%;
+    margin:auto;
+    padding:100px 0;
+}
+
+.section-title{
+    color:#00eaff;
+    margin-bottom:40px;
+    font-size:35px;
+}
+
+/* Card */
+
+.card{
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(0,255,255,.2);
+    padding:30px;
+    border-radius:20px;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 30px rgba(0,234,255,.35);
+}
+
+/* Skills */
+
+.skill{
+    margin:20px 0;
+}
+
+.bar{
+    height:12px;
+    background:#222;
+    border-radius:50px;
+    overflow:hidden;
+}
+
+.fill{
+    height:100%;
+    background:#00eaff;
+    width:0;
+}
+
+/* Accounts */
+
+.accounts{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.account{
+    text-align:center;
+}
+
+.account h3{
+    color:#00eaff;
+    margin-bottom:10px;
+}
+
+.account a{
+    color:white;
+    text-decoration:none;
+}
+
+footer{
+    text-align:center;
+    padding:40px;
+    color:#888;
+}
+
+.reveal{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:none;
+}
+</style>
+</head>
+<body>
+
+<canvas id="particles"></canvas>
+
+<nav>
+<div class="logo">QUANTUM</div>
+
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#accounts">Accounts</a></li>
+</ul>
+</nav>
+
+<section class="hero">
+
+<h1 id="typing"></h1>
+
+<h2>Security Researcher</h2>
+
+<button onclick="document.getElementById('about').scrollIntoView()">
+Explore
+</button>
+
+</section>
+
+<section id="about" class="reveal">
+
+<h2 class="section-title">About Me</h2>
+
+<div class="card">
+
+<p>
+Hello, I'm <b>Quantum</b>, I am a penetration tester and cybersecurity trainer.
+I know about cloud security, Active Directory, and AI security.
+</p>
+
+</div>
+
+</section>
+
+<section id="skills" class="reveal">
+
+<h2 class="section-title">Skills</h2>
+
+<div class="card">
+
+<div class="skill">
+Web Security
+<div class="bar"><div class="fill" style="--w:95%"></div></div>
+</div>
+
+<div class="skill">
+Linux
+<div class="bar"><div class="fill" style="--w:90%"></div></div>
+</div>
+
+<div class="skill">
+Python
+<div class="bar"><div class="fill" style="--w:88%"></div></div>
+</div>
+
+<div class="skill">
+Networking
+<div class="bar"><div class="fill" style="--w:85%"></div></div>
+</div>
+
+</div>
+
+</section>
+
+<section id="accounts" class="reveal">
+
+<h2 class="section-title">Accounts</h2>
+
+<div class="accounts">
+
+<div class="card account">
+<h3>GitHub</h3>
+<a href="#">github.com/0xQuantum9</a>
+</div>
+
+
+<div class="card account">
+<h3>TryHackMe</h3>
+<a href="#">https://tryhackme.com/p/3abkarin0</a>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Quantum | Cybersecurity Portfolio
+</footer>
+
+<script>
+// Typing Effect
+
+const text="QUANTUM";
+let i=0;
+
+function type(){
+    if(i<text.length){
+        document.getElementById("typing").innerHTML+=text.charAt(i);
+        i++;
+        setTimeout(type,150);
+    }
+}
+type();
+
+// Reveal Animation
+
+const reveals=document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll",()=>{
+
+reveals.forEach(r=>{
+
+const top=r.getBoundingClientRect().top;
+
+if(top<window.innerHeight-100){
+
+r.classList.add("active");
+
+}
+});
+});
+
+// Skill Animation
+
+const fills=document.querySelectorAll(".fill");
+
+window.addEventListener("scroll",()=>{
+
+fills.forEach(f=>{
+
+const top=f.getBoundingClientRect().top;
+
+if(top<window.innerHeight){
+
+f.style.width=f.style.getPropertyValue("--w");
+
+}
+
+});
+
+});
+
+// Particle Background
+
+const canvas=document.getElementById("particles");
+const ctx=canvas.getContext("2d");
+
+canvas.width=innerWidth;
+canvas.height=innerHeight;
+
+let particles=[];
+
+for(let i=0;i<120;i++){
+
+particles.push({
+
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+dx:(Math.random()-0.5),
+dy:(Math.random()-0.5),
+r:2
+
+});
+
+}
+
+function animate(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+particles.forEach(p=>{
+
+p.x+=p.dx;
+p.y+=p.dy;
+
+if(p.x<0||p.x>canvas.width)p.dx*=-1;
+if(p.y<0||p.y>canvas.height)p.dy*=-1;
+
+ctx.beginPath();
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+ctx.fillStyle="#00eaff";
+ctx.fill();
+
+});
+
+requestAnimationFrame(animate);
+
+}
+
+animate();
+
+window.onresize=()=>{
+
+canvas.width=innerWidth;
+canvas.height=innerHeight;
+
+};
+</script>
+
+</body>
+</html>
